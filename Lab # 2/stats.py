@@ -1,3 +1,11 @@
+"""
+Program: stats.py
+Author: Jason Moslares
+Creation of mean function combined with mode.py, and median.py
+This program expects a list, compute and output mean, median and mode.
+Returns 0 if the list is empty.
+"""
+
 fileName = input("Enter the file name: ")
 
 def mean(fileName):
