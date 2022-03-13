@@ -13,7 +13,7 @@ def mean(fileName):
     if(counts == 0):
         return 0
     else:
-        mean = theSum / counts
+        mean = round(theSum / counts, 2)
         print("The mean is", mean)
     f.close()
 
