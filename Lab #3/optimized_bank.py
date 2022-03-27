@@ -34,7 +34,7 @@ class Bank:
 
     def __str__(self):
         """Returns the string representation of the bank."""
-        return "\n".join(map(str, self.accounts.values()))
+        return "\n".join(map(str, sorted(self.accounts.values())))
 
     def makeKey(self, name, pin):
         """Returns a key for the account."""
@@ -44,13 +44,7 @@ class Bank:
         """Adds the account to the bank."""
         key = self.makeKey(account.getName(), account.getPin()) 
         self.accounts[key] = account 
-        sorted_keys = self.getKeys()
-        temp_dict = {}
-        for x in sorted_keys:
-            temp_dict[x] = self.accounts[x]
         
-        self.accounts = temp_dict
-
 
     def remove(self, name, pin):
         """Removes the account from the bank and
@@ -76,26 +70,7 @@ class Bank:
 
     def getKeys(self):
         """Returns a sorted list of keys."""
-        # Exercise
-
-        retrieved_keys = list(self.accounts.keys())
-        len_keys = len(retrieved_keys)
-
-        # Selection Sort to Sort the keys
-        for x in range(len_keys):
-            smallest_idx = x
-            for y in range(x + 1, len_keys):
-                if retrieved_keys[y] < retrieved_keys[smallest_idx]:
-                    smallest_idx = y 
-
-            temp = retrieved_keys[x] 
-            retrieved_keys[x] = retrieved_keys[smallest_idx] 
-            retrieved_keys[smallest_idx] = temp 
-
-
-
-        return retrieved_keys
-
+        pass
 
     def save(self, fileName = None):
         """Saves pickled accounts to a file.  The parameter
