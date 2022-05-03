@@ -20,6 +20,6 @@ text_lines = [line.strip() for line in raw_lines]
 while True:
     line_number = int(input(f"Enter the line number [1 - {len(text_lines)}, 0 to exit]: "))
     if line_number == 0:
-        print("Progam is Exiting")
+        print("Program is Exiting")
         break 
     print(text_lines[line_number-1])
